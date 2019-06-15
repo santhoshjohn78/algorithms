@@ -35,10 +35,8 @@ public class Fibonacci {
 
 
     public int fibonacciSum(int n){
-        if (n == 0){
-            return 0;
-        }else if (n==1){
-            return 1;
+        if (n<2){
+            return n;
         }else{
             return fibonacciSum(n - 1)+fibonacciSum(n-2);
         }
