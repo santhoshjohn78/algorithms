@@ -20,6 +20,15 @@ public class SubArrayWithSum {
                 begin++;
             } else { // same
                 System.out.println((begin + 1) + " " + (end + 1));
+                StringBuffer stringBuffer=new StringBuffer();
+                for(int i=begin;i<=end;i++){
+                    stringBuffer.append(""+arr[i]);
+                    if (i<end){
+                        stringBuffer.append(" + ");
+                    }
+                }
+                stringBuffer.append(" = "+cur_sum);
+                System.out.print(stringBuffer.toString());
                 return;
             }
         }
