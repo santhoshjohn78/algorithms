@@ -23,6 +23,18 @@ public class BinarySearchTree {
         root = insert(root,key);
     }
 
+    public Integer getHeight(Node curr){
+        Integer height = -1;
+
+        if (curr==null){
+            return height;
+        }else{
+            height = 1 + Math.max(getHeight(curr.left),getHeight(curr.right));
+        }
+        return height;
+
+    }
+
     public Node insert(Node curr,Integer key){
         if (curr==null){
             //tree is empty
@@ -122,13 +134,13 @@ public class BinarySearchTree {
         tree.insertNode(7);
         tree.insertNode(13);
         tree.insertNode(11);
-
+        System.out.println("height ="+tree.getHeight(tree.root));
         tree.traverseTree();
 
         tree.delete(2);
         System.out.println("**********");
         tree.traverseTree();
-
+        System.out.println("height ="+tree.getHeight(tree.root));
 
     }
 }
