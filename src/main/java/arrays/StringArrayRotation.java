@@ -21,9 +21,9 @@ public class StringArrayRotation {
             }
             tmp = Arrays.asList(tmparr);
 
-            tmp.forEach(System.out::print);
+            tmp.forEach(a -> {System.out.print(a+" ");});
             args=tmparr;
-            System.out.println("**********");
+            System.out.println("");
         }
 
 
@@ -32,7 +32,7 @@ public class StringArrayRotation {
 
     public static void main(String[] args){
             StringArrayRotation sar = new StringArrayRotation();
-            String[] strarr={"a","b","c","d"}; // rotates the array a,b,c,d to d,a,b,c if rotation count is 1
+            String[] strarr={"cat","bat","mat","sat"}; // rotates the array a,b,c,d to d,a,b,c if rotation count is 1
             sar.rotate(strarr,4);
     }
 }
