@@ -7,6 +7,8 @@ import java.util.Scanner;
  * Input: nums = [2,7,11,15], target = 9
  * Output: [0,1]
  * Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+ * Have 2 for loops outer forloop starts from 0th element inner starts at 1th element
+ * check if a[0]+a[1] == target number if so return else continue
  *
  */
 public class TwoNumberSum {
