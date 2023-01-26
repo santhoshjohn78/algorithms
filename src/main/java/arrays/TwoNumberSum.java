@@ -1,5 +1,6 @@
 package arrays;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -26,6 +27,20 @@ public class TwoNumberSum {
         }
         return null;
     }
+
+    public static int[] findSumV2(int[] nums, int target){
+        int[] sumarr = new int[2];
+        HashMap<Integer,Integer> numsMap = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            if (numsMap.containsKey(target-nums[i])){
+                sumarr[0]=numsMap.get(target-nums[i]);
+                sumarr[1]=i;
+                return sumarr;
+            }
+            numsMap.put(nums[i],i);
+        }
+        return sumarr;
+    }
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         int n = keyboard.nextInt();
@@ -37,7 +52,7 @@ public class TwoNumberSum {
         int target = keyboard.nextInt();
 
         keyboard.close();
-        int[] result = findSum(nums,target);
+        int[] result = findSumV2(nums,target);
         if (result.length==2){
             System.out.println("If you add "+result[0] +" and "+result[1]+" you get "+target);
         }else{
